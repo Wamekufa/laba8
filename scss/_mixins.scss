@@ -1,0 +1,48 @@
+// Миксин для медиа-запросов
+@mixin respond-to($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+// Миксин для flex-контейнера
+@mixin flex($justify: flex-start, $align: stretch, $direction: row, $wrap: nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+// Миксин для кнопок
+@mixin button($bg-color, $text-color, $hover-bg) {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+
+    &:hover {
+        background-color: $hover-bg;
+        transform: translateY(-2px);
+        box-shadow: $box-shadow;
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// Миксин для анимации
+@mixin transition($properties...) {
+    transition: all 0.3s ease;
+    @each $property in $properties {
+        transition-property: $property;
+    }
+}

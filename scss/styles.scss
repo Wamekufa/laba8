@@ -1,0 +1,25 @@
+// Импорт частичных файлов
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+// Базовые стили
+body {
+    font-family: $main-font;
+    line-height: 1.6;
+    color: $dark-color;
+    background-color: $light-color;
+    margin: 0;
+    padding: 0;
+}
+
+// Секции
+.section {
+    padding: 40px 0;
+
+    &__title {
+        color: $primary-color;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
